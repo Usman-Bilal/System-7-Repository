@@ -1,6 +1,6 @@
 # System 7 Repository
 
-This repository contains my daily progress for the System 7 learning program.
+**Internship Work** - Daily progress for the System 7 learning program.
 
 ## Structure
 Each day's work is organized in separate folders (Day1, Day2, etc.) containing:
@@ -12,7 +12,8 @@ Each day's work is organized in separate folders (Day1, Day2, etc.) containing:
 ## Daily Progress
 
 ### Day 1
-- [ ] Task to be completed
+- [x] Repository setup and structure created
+- [ ] Task 1: Analyze a CSV dataset and produce charts and summary statistics
 
 ---
 
