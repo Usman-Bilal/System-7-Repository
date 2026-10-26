@@ -8,7 +8,7 @@ import random
 def play_game():
     """Main game function"""
     print("\n" + "="*50)
-    print("🎮 NUMBER GUESSING GAME")
+    print("NUMBER GUESSING GAME")
     print("="*50)
     print("I'm thinking of a number between 1 and 100.")
     print("Can you guess it?")
@@ -27,31 +27,31 @@ def play_game():
             guess = int(input(f"\nAttempt {attempts}/{max_attempts} - Enter your guess: "))
             
             if guess < 1 or guess > 100:
-                print("❌ Please enter a number between 1 and 100!")
+                print("X Please enter a number between 1 and 100!")
                 attempts -= 1  # Don't count invalid attempts
                 continue
             
             if guess == secret_number:
-                print(f"\n🎉 CONGRATULATIONS! You guessed it in {attempts} attempts!")
+                print(f"\n*** CONGRATULATIONS! You guessed it in {attempts} attempts!")
                 print(f"The number was {secret_number}")
                 return True
             elif guess < secret_number:
-                print(f"📈 Too low! Try higher. ({remaining} attempts remaining)")
+                print(f">> Too low! Try higher. ({remaining} attempts remaining)")
             else:
-                print(f"📉 Too high! Try lower. ({remaining} attempts remaining)")
+                print(f"<< Too high! Try lower. ({remaining} attempts remaining)")
                 
         except ValueError:
-            print("❌ Invalid input! Please enter a valid number.")
+            print("X Invalid input! Please enter a valid number.")
             attempts -= 1  # Don't count invalid attempts
     
-    print(f"\n😢 Game Over! You've used all {max_attempts} attempts.")
+    print(f"\n:( Game Over! You've used all {max_attempts} attempts.")
     print(f"The number was {secret_number}")
     return False
 
 def play_with_difficulty():
     """Game with difficulty levels"""
     print("\n" + "="*50)
-    print("🎮 NUMBER GUESSING GAME - DIFFICULTY MODE")
+    print("NUMBER GUESSING GAME - DIFFICULTY MODE")
     print("="*50)
     print("Select difficulty level:")
     print("1. Easy (1-50, 15 attempts)")
@@ -75,7 +75,7 @@ def play_with_difficulty():
         max_num, max_attempts = 100, 10
         level = "Medium"
     
-    print(f"\n🎯 Level: {level}")
+    print(f"\n>> Level: {level}")
     print(f"Guess the number between 1 and {max_num}")
     print(f"You have {max_attempts} attempts")
     
@@ -90,29 +90,29 @@ def play_with_difficulty():
             guess = int(input(f"\nAttempt {attempts}/{max_attempts} - Enter your guess: "))
             
             if guess < 1 or guess > max_num:
-                print(f"❌ Please enter a number between 1 and {max_num}!")
+                print(f"X Please enter a number between 1 and {max_num}!")
                 attempts -= 1
                 continue
             
             if guess == secret_number:
-                print(f"\n🎉 CONGRATULATIONS! You won at {level} level!")
+                print(f"\n*** CONGRATULATIONS! You won at {level} level!")
                 print(f"You guessed {secret_number} in {attempts} attempts!")
                 return True
             elif guess < secret_number:
-                print(f"📈 Too low! ({remaining} attempts remaining)")
+                print(f">> Too low! ({remaining} attempts remaining)")
             else:
-                print(f"📉 Too high! ({remaining} attempts remaining)")
+                print(f"<< Too high! ({remaining} attempts remaining)")
                 
         except ValueError:
-            print("❌ Invalid input! Please enter a valid number.")
+            print("X Invalid input! Please enter a valid number.")
             attempts -= 1
     
-    print(f"\n😢 Game Over! The number was {secret_number}")
+    print(f"\n:( Game Over! The number was {secret_number}")
     return False
 
 def main():
     """Main function with menu"""
-    print("\n🎮 Welcome to Number Guessing Game!")
+    print("\n*** Welcome to Number Guessing Game!")
     
     while True:
         print("\n" + "="*50)
@@ -130,16 +130,16 @@ def main():
         elif choice == '2':
             won = play_with_difficulty()
         elif choice == '3':
-            print("\n✓ Thanks for playing! Goodbye!")
+            print("\nThank you for playing! Goodbye!")
             break
         else:
-            print("❌ Invalid choice! Please select 1-3.")
+            print("X Invalid choice! Please select 1-3.")
             continue
         
         if choice in ['1', '2']:
             play_again = input("\nPlay again? (y/n): ").strip().lower()
             if play_again != 'y':
-                print("\n✓ Thanks for playing! Goodbye!")
+                print("\nThank you for playing! Goodbye!")
                 break
 
 if __name__ == "__main__":
